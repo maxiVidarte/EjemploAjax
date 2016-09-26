@@ -1,7 +1,7 @@
 
 function MostrarError()
 {
-	var funcionAjax=$.ajax({url:"nexoNoExiste.php",type:"post",data:{queHacer:"MostrarTexto"}});
+	/*var funcionAjax=$.ajax({url:"nexoNoExiste.php",type:"post",data:{queHacer:"MostrarTexto"}});
 	funcionAjax.done(function(retorno){
 		$("#principal").html(retorno);
 		$("#informe").html("Correcto!!!");
@@ -12,7 +12,16 @@ function MostrarError()
 	});
 	funcionAjax.always(function(retorno){
 		//alert("siempre "+retorno.statusText);
-	});
+	});*/
+	$.ajax({url:"Noexistelalala"}).then(function(Respuesta){
+		alert("primero"+Respuesta);
+		console.info("primero",Respuesta);
+	},function(Respuesta){
+		alert("segundo"+Respuesta);
+		console.info("segundo",Respuesta);
+	});//esta funcion devuelve retorno, un error o correcto(en lenguaje texto lo del servidor)
+	//ajax sirve para comunicar el servidor
+
 }
 function MostrarSinParametros()
 {
