@@ -25,20 +25,26 @@ function MostrarError()
 }
 function MostrarSinParametros()
 {
-	var funcionAjax=$.ajax({url:"nexoTexto.php"});
+	// var funcionAjax=$.ajax({url:"nexoTexto.php"});
 
-	funcionAjax.done(function(retorno){
-		$("#principal").html(retorno);
-		$("#informe").html("Correcto!!!");
-	});
-	funcionAjax.fail(function(retorno){
-		$("#principal").html(":(");
-		$("#informe").html(retorno.responseText);	
-	});
-	funcionAjax.always(function(retorno){
-		//alert("siempre "+retorno.statusText);
+	// funcionAjax.done(function(retorno){
+	// 	$("#principal").html(retorno);
+	// 	$("#informe").html("Correcto!!!");
+	// });
+	// funcionAjax.fail(function(retorno){
+	// 	$("#principal").html(":(");
+	// 	$("#informe").html(retorno.responseText);	
+	// });
+	// funcionAjax.always(function(retorno){
+	// 	//alert("siempre "+retorno.statusText);
 
-	});
+	// });
+	$.ajax({url:"nexoTexto.php"}).then(function(Respuesta){
+		$("#principal").html(Respuesta);
+	}
+		,function(){
+		});
+
 }
 
 function Mostrar(queMostrar)
