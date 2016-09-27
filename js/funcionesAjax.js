@@ -41,6 +41,7 @@ function MostrarSinParametros()
 	// });
 	$.ajax({url:"nexoTexto.php"}).then(function(Respuesta){
 		$("#principal").html(Respuesta);
+		
 	}
 		,function(){
 		});
